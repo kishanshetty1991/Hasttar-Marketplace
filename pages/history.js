@@ -5,7 +5,7 @@ import { HasttarContext } from '../context/HasttarContext'
 import Transaction from '../components/Transaction'
 
 
-const history = () => {
+const History = () => {
 
     const styles = {
         container: `h-full w-full flex bg-[#fff]`,
@@ -42,4 +42,4 @@ const history = () => {
     )
 }
 
-export default history
+export default History
