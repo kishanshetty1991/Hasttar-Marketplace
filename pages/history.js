@@ -16,12 +16,12 @@ const History = () => {
     }
 
     const { ownedItems } = useContext(HasttarContext)
-
+    const {render, searchTerm} = Header();
     return (
         <div className={styles.container}>
             <Sidebar />
             <div className={styles.main}>
-                <Header />
+                {render}
                 <div className={styles.tableContainer}>
                     {ownedItems ? (
                         <div className={styles.pageTitle}>Purchase History</div>
@@ -29,10 +29,12 @@ const History = () => {
                         <div className={styles.pageTitle}>No Purchase History</div>
                     )}
 
+                    {/* {console.log("Owned")}
+                    {console.log(ownedItems)} */}
                     <div className={styles.transactions}>
                         {ownedItems.map((item, index) => {
                             return <Transaction key={index} item={item} index={index} />
-                        })}
+                        }) }
                     </div>
                 </div>
 

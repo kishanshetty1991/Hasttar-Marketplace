@@ -93,6 +93,7 @@ const BuyModal = ({ close }) => {
                         onClick={() => {
                             setIsLoading(true)
                             buyTokens()
+                            // setIsLoading(false)
                         }}
                     >
                         Buy

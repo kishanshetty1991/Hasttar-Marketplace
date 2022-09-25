@@ -13,12 +13,13 @@ const Main = () => {
         transactionCard: `flex justify-between mb-[20px] p-[30px] bg-[#42667e] text-white rounded-xl shadow-xl font-bold gap-[20px] text-xl`,
     }
     const { recentTransactions } = useContext(HasttarContext)
-    console.log(recentTransactions)
+    //console.log(recentTransactions)
+    const {render, searchTerm} = Header();
     return (
         <div className={styles.container}>
-            <Header />
+            {render}
             <Featured />
-            <Cards />
+            <Cards {...{searchTerm}}/>
             {recentTransactions.length > 0 && (
                 <h1 className={styles.recentTitle}>Recent Transactions</h1>
             )}

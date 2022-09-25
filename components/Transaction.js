@@ -22,7 +22,7 @@ const Transaction = ({item}) => {
     const {username} = useContext(HasttarContext)
     return (
         <>
-        {item.map((asset, index)=>{
+        {item.slice(0).reverse().map((asset, index)=>{
             return (
                 <div className={styles.container} key={index}>
                     <div className={styles.top}>

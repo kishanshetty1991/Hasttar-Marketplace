@@ -50,8 +50,8 @@ export const HasttarProvider = ({ children }) => {
         let query = new Moralis.Query('EthTransactions')
         let subscription = await query.subscribe()
         subscription.on('update', async object => {
-            console.log("New Transactions")
-            console.log(object)
+           // console.log("New Transactions")
+            //console.log(object)
             setRecentTransactions([object])
         })
     }
@@ -69,7 +69,7 @@ export const HasttarProvider = ({ children }) => {
             }
             if (isWeb3Enabled) {
                 const response = await Moralis.executeFunction(options)
-                console.log(response.toString())
+                //console.log(response.toString())
                 setBalance(response.toString())
             }
         }
@@ -155,6 +155,7 @@ export const HasttarProvider = ({ children }) => {
     }
 
     const buyTokens = async () => {
+        //setIsLoading(true);
         if (!isAuthenticated) {
             await connectWallet()
         }
@@ -162,7 +163,7 @@ export const HasttarProvider = ({ children }) => {
         const price = ethers.BigNumber.from('100000000000000')
         const calcPrice = amount.mul(price)
 
-        console.log("Here", hasttarCoinAddress)
+        //console.log("Here", hasttarCoinAddress)
 
         let options = {
             contractAddress: hasttarCoinAddress,
@@ -175,9 +176,10 @@ export const HasttarProvider = ({ children }) => {
         }
 
         const transaction = await Moralis.executeFunction(options)
-        const receipt = await transaction.wait(4)
+        const receipt = await transaction.wait()
+        
         setIsLoading(false)
-        console.log("There", receipt)
+        //console.log("There", receipt)
         setEtherscanLink(
             `https://rinkeby.etherscan.io/tx/${receipt.transactionHash}`,
         )
