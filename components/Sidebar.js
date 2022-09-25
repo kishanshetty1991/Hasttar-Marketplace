@@ -91,7 +91,7 @@ const Sidebar = () => {
             My Hasttar <br /> Board
           </div>
         </Link>
-        <a href="https://62e3a8c2c1b4d36baf5af44f--hasttarapp.netlify.app" target="_blank"  rel="noopener noreferrer">
+        <a href="https://hasttar-blockchain-app.netlify.app/" target="_blank"  rel="noopener noreferrer">
         <div className={styles.menuItem}>
           <FaBox />
           Send Crypto
